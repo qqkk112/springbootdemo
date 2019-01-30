@@ -6,112 +6,101 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
-    /**
-     * 账号
-     */
-    private String name;
+    private String username;
 
-    /**
-     * 昵称
-     */
+    private String password;
+
     @Column(name = "nick_name")
     private String nickName;
 
-    /**
-     * 密码
-     */
-    private String password;
+    private Integer sex;
 
-    /**
-     * 注册时间
-     */
-    private Date time;
+    @Column(name = "register_date")
+    private Date registerDate;
 
     /**
      * @return id
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 获取账号
-     *
-     * @return name - 账号
+     * @return username
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * 设置账号
-     *
-     * @param name 账号
+     * @param username
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
-     * 获取昵称
-     *
-     * @return nick_name - 昵称
-     */
-    public String getNickName() {
-        return nickName;
-    }
-
-    /**
-     * 设置昵称
-     *
-     * @param nickName 昵称
-     */
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    /**
-     * 获取密码
-     *
-     * @return password - 密码
+     * @return password
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * 设置密码
-     *
-     * @param password 密码
+     * @param password
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * 获取注册时间
-     *
-     * @return time - 注册时间
+     * @return nick_name
      */
-    public Date getTime() {
-        return time;
+    public String getNickName() {
+        return nickName;
     }
 
     /**
-     * 设置注册时间
-     *
-     * @param time 注册时间
+     * @param nickName
      */
-    public void setTime(Date time) {
-        this.time = time;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    /**
+     * @return sex
+     */
+    public Integer getSex() {
+        return sex;
+    }
+
+    /**
+     * @param sex
+     */
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
+
+    /**
+     * @return register_date
+     */
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    /**
+     * @param registerDate
+     */
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 }

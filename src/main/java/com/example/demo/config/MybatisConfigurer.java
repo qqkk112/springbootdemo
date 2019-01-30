@@ -24,7 +24,7 @@ import static com.example.demo.core.ProjectConstant.MODEL_PACKAGE;
 @Configuration
 public class MybatisConfigurer {
 
-    @Bean
+    @Bean(name="sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactoryBean(@Qualifier("dataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
@@ -50,9 +50,9 @@ public class MybatisConfigurer {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactoryBean");
+        mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
         mapperScannerConfigurer.setBasePackage(MAPPER_PACKAGE);
-
+        System.out.println("MAPPER_PACKAGE-------------" + MAPPER_PACKAGE);
         //配置通用Mapper，详情请查阅官方文档
         Properties properties = new Properties();
         properties.setProperty("mappers", MAPPER_INTERFACE_REFERENCE);

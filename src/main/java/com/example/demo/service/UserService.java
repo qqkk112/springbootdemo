@@ -4,7 +4,7 @@ import com.example.demo.core.Service;
 
 
 /**
- * Created by Tian Jiguang on 2018/06/13.
+ * Created by Tian Jiguang on 2018/06/17.
  */
 public interface UserService extends Service<User> {
 
